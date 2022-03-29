@@ -21,8 +21,14 @@ apply<KorgeGradlePlugin>()
 
 korge {
 	id = "org.rack.manapart"
-// To enable all targets at once
 
+	//    implementation("org.rak.manapart:quest-command:0.0.5") {
+//	implementation("org.rak.manapart:quest-command:SNAPSHOT") {
+//		exclude("org.jetbrains.kotlin","kotlin-stdlib")
+//	}
+	dependencyMulti("org.rak.manapart:quest-command:SNAPSHOT")
+//	project.korge.addDependency("jvmMainImplementation", "org.rak.manapart:quest-command:SNAPSHOT")
+// To enable all targets at once
 	//targetAll()
 
 // To enable targets based on properties/environment variables
