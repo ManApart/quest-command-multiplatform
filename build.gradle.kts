@@ -19,23 +19,19 @@ buildscript {
 
 apply<KorgeGradlePlugin>()
 
-korge {
-	id = "org.rack.manapart"
-
-	//    implementation("org.rak.manapart:quest-command:0.0.5") {
-//	implementation("org.rak.manapart:quest-command:SNAPSHOT") {
+// Exclude kotlin runtime
+//configurations {
+//	all {
 //		exclude("org.jetbrains.kotlin","kotlin-stdlib")
 //	}
+//}
+
+korge {
+	id = "org.rack.manapart"
 	dependencyMulti("org.rak.manapart:quest-command:SNAPSHOT")
-//	project.korge.addDependency("jvmMainImplementation", "org.rak.manapart:quest-command:SNAPSHOT")
-// To enable all targets at once
-	//targetAll()
-
-// To enable targets based on properties/environment variables
-	//targetDefault()
-
-// To selectively enable targets
+//	targetAll()
 
 	targetJvm()
+//	targetAndroid()
 	targetJs()
 }

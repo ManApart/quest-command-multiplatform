@@ -10,6 +10,11 @@ import com.soywiz.korim.color.Colors
 import com.soywiz.korim.text.TextAlignment
 import com.soywiz.korma.geom.Anchor
 import com.soywiz.korma.geom.ScaleMode
+import core.GameManager
+import core.GameState
+import core.commands.CommandParsers
+import core.events.EventManager
+import core.history.TerminalPrinter
 
 const val WIDTH = 512.0
 const val HEIGHT = 512.0
@@ -63,4 +68,8 @@ suspend fun main() = Korge(
         }
     }
 
+    EventManager.registerListeners()
+    GameManager.newOrLoadGame()
+    CommandParsers.parseInitialCommand(GameState.player, arrayOf())
+    TerminalPrinter.print()
 }
